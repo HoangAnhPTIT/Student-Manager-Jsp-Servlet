@@ -12,4 +12,8 @@
 	<decorator name="login" page="login.jsp">
 		<pattern>/dang-nhap</pattern>
 	</decorator>
+	
+	<decorator name="logout" page="login.jsp">
+		<pattern>/thoat</pattern>
+	</decorator>
 </decorators>

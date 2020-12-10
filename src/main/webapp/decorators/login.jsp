@@ -16,11 +16,11 @@
 <body>
 	<div class="login-wrap">
 		<div class="login-html">
-			<c:if test="${param.incorrectAccount != null}">
-				<div class="alert alert-danger" role="alert">Incorrect Acount</div>
-			</c:if>
-			<c:if test="${param.accessDenied != null}">
-				<div class="alert alert-danger" role="alert">You Not Permit</div>
+			
+			
+			<c:if test="${param.message!=null}">
+				
+				<div class="alert alert-${param.alert}" role="alert">${param.message}</div>
 			</c:if>
 			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label
 				for="tab-1" class="tab">Sign In</label> <input id="tab-2"
@@ -29,15 +29,15 @@
 
 			<div class="login-form">
 
-				<form action="j_spring_security_check" method="post">
+				<form action="<c:url value='dang-nhap?action=login'/>" method="post">
 					<div class="sign-in-htm">
 						<div class="group">
-							<label for="user" class="label">Username</label> <input id="user"
-								name="j_username" type="text" class="input">
+							<label for="user" class="label">User Name</label><input id="user"
+								name="userName" type="text" class="input">
 						</div>
 						<div class="group">
-							<label for="pass" class="label">Password</label> <input id="pass"
-								name="j_password" type="password" class="input"
+							<label for="password" class="label">Password</label> <input id="password"
+								name="password" type="password"  class="input"
 								data-type="password">
 						</div>
 						<div class="group">
@@ -53,6 +53,7 @@
 							<a href="#forgot">Forgot Password?</a>
 						</div>
 					</div>
+					
 				</form>
 				<form action="">
 					<div class="sign-up-htm">

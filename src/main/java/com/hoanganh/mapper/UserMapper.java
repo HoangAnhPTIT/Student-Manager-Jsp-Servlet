@@ -3,6 +3,7 @@ package com.hoanganh.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.hoanganh.model.RoleModel;
 import com.hoanganh.model.StudentModel;
 import com.hoanganh.model.TeacherModel;
 import com.hoanganh.model.UserModel;
@@ -22,6 +23,14 @@ public class UserMapper implements RowMapper<UserModel> {
 			model.setUserName(result.getString("username"));
 			model.setPassword(result.getString("password"));
 			String type = result.getString("user_code");
+			try {
+				RoleModel role = new RoleModel();
+				role.setCode(result.getString("code"));
+				role.setName(result.getString("name"));
+				model.setRoleModel(role);
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 			if (type.equals("student")) {
 				try {
 					StudentModel studentModel = new StudentModel();

@@ -22,3 +22,13 @@ CREATE TABLE teacher (
     user_id BIGINT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES user(id)
 );
+CREATE TABLE role (
+	id BIGINT NOT NULL PRIMARY KEY auto_increment,
+    user_id BIGINT NOT NULL,
+    code VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);
+INSERT INTO `servlet_jsp_SM`.`role` (`id`, `user_id`, `code`, `name`) VALUES ('1', '1', 'ADMIN', 'Quản Trị');
+INSERT INTO `servlet_jsp_SM`.`role` (`id`, `user_id`, `code`, `name`) VALUES ('2', '2', 'User', 'Người dùng');
+INSERT INTO `servlet_jsp_SM`.`role` (`id`, `user_id`, `code`, `name`) VALUES ('3', '3', 'ADMIN', 'Quản Trị');

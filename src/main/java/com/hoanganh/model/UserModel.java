@@ -14,7 +14,10 @@ public class UserModel {
 	private String userCode;
 	private StudentModel studentModel;
 	private TeacherModel teacherModel;
-	
+	private RoleModel roleModel;
+
+	private String type;
+
 	private List<UserModel> listUser = new ArrayList<>();
 	private List<StudentModel> listStudent = new ArrayList<>();
 	private List<TeacherModel> listTeacher = new ArrayList<>();
@@ -122,5 +125,21 @@ public class UserModel {
 	public void setTeacherModel(TeacherModel teacherModel) {
 		this.teacherModel = teacherModel;
 	}
-	
+
+	public RoleModel getRoleModel() {
+		return roleModel;
+	}
+
+	public void setRoleModel(RoleModel roleModel) {
+		this.roleModel = roleModel;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 }

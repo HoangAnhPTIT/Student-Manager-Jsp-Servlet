@@ -30,10 +30,10 @@ public class AbstractDAO {
 	public void setParameter(PreparedStatement statement, Object... parameters) {
 		try {
 			for (int i = 0; i < parameters.length; i++) {
-				int index = i;
+				int index = i+1;
 				Object parameter = parameters[i];
 				if (parameter instanceof Long) {
-					statement.setLong(index, (long) parameter);
+					statement.setLong(index, (Long) parameter);
 				} else if (parameter instanceof String) {
 					statement.setString(index, (String) parameter);
 				} else if (parameter instanceof Integer) {
