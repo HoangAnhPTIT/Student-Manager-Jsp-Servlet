@@ -54,6 +54,7 @@ a {
 	font-size: 16px;
 	border: none;
 	cursor: pointer;
+	width: 100%;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -63,6 +64,7 @@ a {
 .dropdown {
 	position: relative;
 	display: inline-block;
+	width: 100%;
 }
 
 .dropdown-content {
@@ -173,4 +175,8 @@ input[type=submit]:hover {
 		width: 100%;
 		margin-top: 0;
 	}
+}
+
+.linklist{
+	text-align: center;
 }

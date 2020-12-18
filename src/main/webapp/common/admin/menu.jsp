@@ -6,8 +6,8 @@
 	<div class="dropdown">
 		<button onclick="myFunction()" class="dropbtn">List user</button>
 		<div id="myDropdown" class="dropdown-content">
-			<a href="<c:url value='/quan-tri-list?type=list&typeUser=student'/>">List Student</a> 
-			<a href="<c:url value='/quan-tri-list?type=list&typeUser=teacher'/>">List Teacher</a> 
+			<a class="linklist" href="<c:url value='/quan-tri-list?type=list&typeUser=student'/>">List Student</a> 
+			<a class="linklist" href="<c:url value='/quan-tri-list?type=list&typeUser=teacher'/>">List Teacher</a> 
 		</div>
 	</div>
 </div>
