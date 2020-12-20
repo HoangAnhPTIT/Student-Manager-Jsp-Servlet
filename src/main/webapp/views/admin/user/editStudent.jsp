@@ -9,51 +9,72 @@
 </head>
 
 <body>
-	<div class="containerTableUser">
-		<form action="/action_page.php">
-			<div class="row">
-				<div class="col-25">
-					<label for="fname">First Name</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="fname" name="firstname"
-						placeholder="Your name..">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-25">
-					<label for="lname">Last Name</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="lname" name="lastname"
-						placeholder="Your last name..">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-25">
-					<label for="country">Country</label>
-				</div>
-				<div class="col-75">
-					<select id="country" name="country">
-						<option value="australia">Australia</option>
-						<option value="canada">Canada</option>
-						<option value="usa">USA</option>
-					</select>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-25">
-					<label for="subject">Subject</label>
-				</div>
-				<div class="col-75">
-					<textarea id="subject" name="subject"
-						placeholder="Write something.." style="height: 200px"></textarea>
-				</div>
-			</div>
-			<div class="row">
-				<input type="submit" value="Submit">
-			</div>
-		</form>
+    <div class="main">
+        <div class="container">
+            <form action="">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fname">
+                            Full Name
+                        </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="fname" name="fullName" placeholder="Full Name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="address">
+                            Address
+                        </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="address" name="address" placeholder="Address">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="gender">
+                            Gender
+                        </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="gender" name="gender" placeholder="Gender">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="age">
+                            Age
+                        </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="age" name="age" placeholder="Age">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="svNam">
+                            SvNam
+                        </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="svNam" name="svNam" placeholder="SvNam">
+                    </div>
+                </div>
+                <div>
+                    <c:if test="${param.action=='update'}">
+                        <button type="submit">Update student</button>
+                    </c:if>
+                    <c:if test="${param.action=='add'}">
+                        <button type="submit">Add student</button>
+                    </c:if>
+
+                </div>
+            </form>
+        </div>
+    </div>
+	
 </body>
 </div>
 </html>

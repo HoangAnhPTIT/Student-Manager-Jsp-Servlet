@@ -2,6 +2,7 @@
 	padding: 0;
 	margin: 0;
 	font-family: sans-serif;
+	box-sizing: border-box;
 }
 
 .header {
@@ -13,7 +14,6 @@
 .menu {
 	float: left;
 	width: 15%;
-	height: 500px;
 	background-color: aliceblue;
 }
 
@@ -44,7 +44,9 @@ a {
 }
 
 .main {
-	height: 500px;
+	float:left;
+	width: 85%;
+	position: relative;
 }
 
 .dropbtn {
@@ -98,22 +100,36 @@ table {
 	width: 100%;
 }
 
+.bt {
+	padding:10px;
+	border-radius: 5px;
+	/*position: absolute;*/
+	/*left: 140px;*/
+}
+.bt_green{
+	background: green;
+	color: white;
+}
+.bt_black{
+	background: black;
+	color: whitesmoke;
+}
+.bt_green{
+	float: left;
+}
 td, th {
 	border: 1px solid #dddddd;
 	text-align: left;
 	padding: 8px;
 }
 
-tr:nth-child(even) {
-	background-color: #dddddd;
-}
 
 .tableUser {
 	padding-top: 30px;
 	width: 80%;
 	position: absolute;
-	top: 160px;
-	left: 220px;
+	top: 100px;
+	left: 140px;
 }
 
 input[type=text], select, textarea {
@@ -169,6 +185,18 @@ input[type=submit]:hover {
 	clear: both;
 }
 
+form > .row {
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 5px;
+}
+form > div > button {
+	margin-top: 5px;
+	background: #5fec4f;
+	border-radius: 5px;
+	border: 1px solid #e0e0e0;
+	padding: 0 4px;
+	line-height: 30px;
+}
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
 	.col-25, .col-75, input[type=submit] {
@@ -180,3 +208,9 @@ input[type=submit]:hover {
 .linklist{
 	text-align: center;
 }
+
+.container {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+  }

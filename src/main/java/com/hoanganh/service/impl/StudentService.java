@@ -18,4 +18,9 @@ public class StudentService implements IStudentService{
 		return studentDAO.findAll();
 	}
 
+	@Override
+	public void save(StudentModel studentModel) {
+		studentDAO.save(studentModel);
+	}
+
 }

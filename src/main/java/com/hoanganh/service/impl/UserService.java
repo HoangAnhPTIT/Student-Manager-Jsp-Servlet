@@ -21,5 +21,10 @@ public class UserService implements IUserService{
 	public UserModel findByUserNameAndPassword(String userName, String password) {
 		return userDAO.findByUserNameAndPassword(userName, password);
 	}
-	
+
+	@Override
+	public Long save(UserModel userModel) {
+		return userDAO.save(userModel);
+	}
+
 }

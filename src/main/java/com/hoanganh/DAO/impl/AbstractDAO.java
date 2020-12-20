@@ -1,18 +1,13 @@
 package com.hoanganh.DAO.impl;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.sql.Types;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hoanganh.DAO.GenericDAO;
 import com.hoanganh.mapper.RowMapper;
 
-public class AbstractDAO {
+public class AbstractDAO implements GenericDAO {
 	public Connection getConnection() {
 		String driverName = "com.mysql.cj.jdbc.Driver";
 		String url = "jdbc:mysql://localhost:3306/servlet_jsp_SM";
@@ -50,6 +45,7 @@ public class AbstractDAO {
 
 	}
 
+	@Override
 	public <T> List<T> query(String sql, RowMapper<T> rowMapper, Object... parameters){
 		List<T> results = new ArrayList<>();
 		Connection connection = getConnection();
@@ -83,5 +79,54 @@ public class AbstractDAO {
 
 			}
 		}
+	}
+
+	@Override
+	public Long save(String sql, Object... parameters) {
+		Connection connection = getConnection();
+		PreparedStatement statement = null;
+		ResultSet result = null;
+		Long id = null;
+		try{
+			connection.setAutoCommit(false);
+			statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			setParameter(statement,parameters);
+			statement.executeUpdate();
+			result = statement.getGeneratedKeys();
+			while(result.next()){
+				id = result.getLong(1);
+			}
+			connection.commit();
+			return id;
+		} catch(SQLException e){
+			if(connection!=null){
+				try {
+					connection.rollback();
+				} catch (SQLException throwables) {
+					throwables.printStackTrace();
+					return null;
+				}
+			}
+			e.printStackTrace();
+			return null;
+		} finally {
+			try {
+				if (statement != null) {
+					statement.close();
+				}
+
+				if (connection != null) {
+					connection.close();
+				}
+				if (result != null) {
+					result.close();
+				}
+			} catch (SQLException se) {
+				return null;
+
+			}
+		}
+
+
 	}
 }

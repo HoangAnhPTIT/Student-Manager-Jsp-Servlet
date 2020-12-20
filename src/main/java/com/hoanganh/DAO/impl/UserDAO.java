@@ -29,4 +29,11 @@ public class UserDAO extends AbstractDAO implements IUserDAO {
 		return users.isEmpty() ? null : users.get(0);
 	}
 
+	@Override
+	public Long save(UserModel userModel) {
+		StringBuilder sql = new StringBuilder("INSERT INTO user (fullname, gender, age, address, role_id, user_code)");
+		sql.append(" VALUES (?, ?, ?, ?, ?, ?)");
+		return save(sql.toString(), userModel.getFullName(), userModel.getGender(), userModel.getAge(), userModel.getAddress(), 1, "student");
+	}
+
 }

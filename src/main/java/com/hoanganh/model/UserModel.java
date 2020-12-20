@@ -4,142 +4,163 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserModel {
-	private Long id;
-	private String userName;
-	private String password;
-	private String fullName;
-	private String address;
-	private String gender;
-	private int age;
-	private String userCode;
-	private StudentModel studentModel;
-	private TeacherModel teacherModel;
-	private RoleModel roleModel;
+    private Long id;
+    private String userName;
+    private String password;
+    private String fullName;
+    private String address;
+    private String gender;
+    private int age;
 
-	private String type;
+    private int svNam;
 
-	private List<UserModel> listUser = new ArrayList<>();
-	private List<StudentModel> listStudent = new ArrayList<>();
-	private List<TeacherModel> listTeacher = new ArrayList<>();
+    private int thamNien;
 
-	public Long getId() {
-		return id;
-	}
+    private String userCode;
+    private StudentModel studentModel;
+    private TeacherModel teacherModel;
+    private RoleModel roleModel;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private String type;
 
-	public String getUserName() {
-		return userName;
-	}
+    private List<UserModel> listUser = new ArrayList<>();
+    private List<StudentModel> listStudent = new ArrayList<>();
+    private List<TeacherModel> listTeacher = new ArrayList<>();
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public String getFullName() {
-		return fullName;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getFullName() {
+        return fullName;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public List<UserModel> getListUser() {
-		return listUser;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	public void setListUser(List<UserModel> listUser) {
-		this.listUser = listUser;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public List<StudentModel> getListStudent() {
-		return listStudent;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public void setListStudent(List<StudentModel> listStudent) {
-		this.listStudent = listStudent;
-	}
+    public List<UserModel> getListUser() {
+        return listUser;
+    }
 
-	public List<TeacherModel> getListTeacher() {
-		return listTeacher;
-	}
+    public int getSvNam() {
+        return svNam;
+    }
 
-	public void setListTeacher(List<TeacherModel> listTeacher) {
-		this.listTeacher = listTeacher;
-	}
+    public void setSvNam(int svNam) {
+        this.svNam = svNam;
+    }
 
-	public String getUserCode() {
-		return userCode;
-	}
+    public int getThamNien() {
+        return thamNien;
+    }
 
-	public void setUserCode(String userCode) {
-		this.userCode = userCode;
-	}
+    public void setThamNien(int thamNien) {
+        this.thamNien = thamNien;
+    }
 
-	public StudentModel getStudentModel() {
-		return studentModel;
-	}
+    public void setListUser(List<UserModel> listUser) {
+        this.listUser = listUser;
+    }
 
-	public void setStudentModel(StudentModel studentModel) {
-		this.studentModel = studentModel;
-	}
+    public List<StudentModel> getListStudent() {
+        return listStudent;
+    }
 
-	public TeacherModel getTeacherModel() {
-		return teacherModel;
-	}
+    public void setListStudent(List<StudentModel> listStudent) {
+        this.listStudent = listStudent;
+    }
 
-	public void setTeacherModel(TeacherModel teacherModel) {
-		this.teacherModel = teacherModel;
-	}
+    public List<TeacherModel> getListTeacher() {
+        return listTeacher;
+    }
 
-	public RoleModel getRoleModel() {
-		return roleModel;
-	}
+    public void setListTeacher(List<TeacherModel> listTeacher) {
+        this.listTeacher = listTeacher;
+    }
 
-	public void setRoleModel(RoleModel roleModel) {
-		this.roleModel = roleModel;
-	}
+    public String getUserCode() {
+        return userCode;
+    }
 
-	public String getType() {
-		return type;
-	}
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public StudentModel getStudentModel() {
+        return studentModel;
+    }
+
+    public void setStudentModel(StudentModel studentModel) {
+        this.studentModel = studentModel;
+    }
+
+    public TeacherModel getTeacherModel() {
+        return teacherModel;
+    }
+
+    public void setTeacherModel(TeacherModel teacherModel) {
+        this.teacherModel = teacherModel;
+    }
+
+    public RoleModel getRoleModel() {
+        return roleModel;
+    }
+
+    public void setRoleModel(RoleModel roleModel) {
+        this.roleModel = roleModel;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
 }

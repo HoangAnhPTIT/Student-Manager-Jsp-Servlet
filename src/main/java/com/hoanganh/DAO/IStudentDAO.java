@@ -6,4 +6,5 @@ import com.hoanganh.model.StudentModel;
 
 public interface IStudentDAO {
 	List<StudentModel> findAll();
+	void save(StudentModel studentModel);
 }

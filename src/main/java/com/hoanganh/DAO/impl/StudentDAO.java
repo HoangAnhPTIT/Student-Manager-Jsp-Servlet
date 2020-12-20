@@ -14,4 +14,10 @@ public class StudentDAO extends AbstractDAO implements IStudentDAO{
 		return null;
 	}
 
+	@Override
+	public void save(StudentModel studentModel) {
+		String sql = "INSERT INTO student (user_id, svNam) VALUES (?, ?)";
+		Long id = save(sql, studentModel.getId(), studentModel.getSvNam());
+	}
+
 }
